@@ -1,0 +1,574 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    
+    <!-- main-search start -->
+    <div class="main-search-active">
+        <div class="sidebar-search-icon">
+            <button class="search-close"><span class="icon-close"></span></button>
+        </div>
+        <div class="sidebar-search-input">
+            <form>
+                <div class="form-search">
+                    <input id="search" class="input-text" value="" placeholder="Search entire store here ..." type="search">
+                    <button class="search-btn" type="button">
+                        <i class="icon-magnifier"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- main-search start -->
+    
+    <!-- main-search start -->
+    <div class="main-search-active">
+        <div class="sidebar-search-icon">
+            <button class="search-close"><span class="icon-close"></span></button>
+        </div>
+        <div class="sidebar-search-input">
+            <form>
+                <div class="form-search">
+                    <input id="search" class="input-text" value="" placeholder="Search entire store here ..." type="search">
+                    <button class="search-btn" type="button">
+                        <i class="icon-magnifier"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- main-search start -->
+    
+    <!-- Hero Slider Start -->
+
+    <div class="hero-slider hero-slider-one ">
+        <!-- Single Slide Start -->
+        {% for selling in sellings %}
+        <div class="single-slide">
+            <img src="{{selling.image.url}}" alt="{{ selling.name }}">
+
+            <!-- Hero Content One Start -->
+            <div class="hero-content-one container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-8"> 
+                        <div class="slider-text-info pt-0">
+                            <h3 class="">Top Selling!</h3>
+                            <h1>{{selling.name}}</h1>
+                            <p>{{selling.description}}</p>
+                            <a href="{% url 'shop' %}" class="btn slider-btn uppercase"><span>SHOP NOW</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Hero Content One End -->
+        </div>
+        <!-- Single Slide End -->
+        {% endfor %}
+    </div>
+    <!-- Hero Section End -->
+    
+
+    
+    <!-- product-area start -->
+    <div class="product-area section-pb">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- section-title start -->
+
+                    <div class="section-title">
+                        <br>
+                        <h2>New Arrivals</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                    </div>
+                    <!-- section-title end -->
+                </div>
+            </div>
+            <!-- product-warpper start -->
+            <div class="product-warpper">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <!-- single-product-wrap start -->
+                        <div class="single-product-wrap">
+                            <div class="product-image">
+                                <a href="product-details.html"><img src="static/images/product/1.jpg" alt=""></a>
+                                <div class="product-action">
+                                    <a href="#" class="wishlist"><i class="icon-heart"></i></a>
+                                    <a href="#" class="add-to-cart"><i class="icon-handbag"></i></a>
+                                    <a href="#" class="quick-view" data-toggle="modal" data-target="#exampleModalCenter"><i class="icon-shuffle"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h3><a href="product-details.html">Products Name 001</a></h3>
+                                <div class="price-box">
+                                    <span class="old-price">140.00</span>
+                                    <span class="new-price">120.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single-product-wrap end -->
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <!-- single-product-wrap start -->
+                        <div class="single-product-wrap">
+                            <div class="product-image">
+                                <a href="product-details.html"><img src="static/images/product/2.jpg" alt=""></a>
+                                <div class="product-action">
+                                    <a href="#" class="wishlist"><i class="icon-heart"></i></a>
+                                    <a href="#" class="add-to-cart"><i class="icon-handbag"></i></a>
+                                    <a href="#" class="quick-view" data-toggle="modal" data-target="#exampleModalCenter"><i class="icon-shuffle"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h3><a href="product-details.html">Products Name 002</a></h3>
+                                <div class="price-box">
+                                    <span class="new-price">120.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single-product-wrap end -->
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <!-- single-product-wrap start -->
+                        <div class="single-product-wrap">
+                            <div class="product-image">
+                                <a href="product-details.html"><img src="static/images/product/3.jpg" alt=""></a>
+                                <div class="product-action">
+                                    <a href="#" class="wishlist"><i class="icon-heart"></i></a>
+                                    <a href="#" class="add-to-cart"><i class="icon-handbag"></i></a>
+                                    <a href="#" class="quick-view" data-toggle="modal" data-target="#exampleModalCenter"><i class="icon-shuffle"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h3><a href="product-details.html">Products Name 003</a></h3>
+                                <div class="price-box">
+                                    <span class="old-price">230.00</span>
+                                    <span class="new-price">210.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single-product-wrap end -->
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <!-- single-product-wrap start -->
+                        <div class="single-product-wrap">
+                            <div class="product-image">
+                                <a href="product-details.html"><img src="static/images/product/4.jpg" alt=""></a>
+                                <div class="product-action">
+                                    <a href="#" class="wishlist"><i class="icon-heart"></i></a>
+                                    <a href="#" class="add-to-cart"><i class="icon-handbag"></i></a>
+                                    <a href="#" class="quick-view" data-toggle="modal" data-target="#exampleModalCenter"><i class="icon-shuffle"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h3><a href="product-details.html">Products Name 004</a></h3>
+                                <div class="price-box">
+                                    <span class="new-price">120.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single-product-wrap end -->
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <!-- single-product-wrap start -->
+                        <div class="single-product-wrap">
+                            <div class="product-image">
+                                <a href="#"><img src="static/images/product/5.jpg" alt=""></a>
+                                <div class="product-action">
+                                    <a href="#" class="wishlist"><i class="icon-heart"></i></a>
+                                    <a href="#" class="add-to-cart"><i class="icon-handbag"></i></a>
+                                    <a href="#" class="quick-view" data-toggle="modal" data-target="#exampleModalCenter"><i class="icon-shuffle"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h3><a href="product-details.html">Products Name 005</a></h3>
+                                <div class="price-box">
+                                    <span class="old-price">180.00</span>
+                                    <span class="new-price">150.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single-product-wrap end -->
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <!-- single-product-wrap start -->
+                        <div class="single-product-wrap">
+                            <div class="product-image">
+                                <a href="product-details.html"><img src="static/images/product/6.jpg" alt=""></a>
+                                <div class="product-action">
+                                    <a href="#" class="wishlist"><i class="icon-heart"></i></a>
+                                    <a href="#" class="add-to-cart"><i class="icon-handbag"></i></a>
+                                    <a href="#" class="quick-view" data-toggle="modal" data-target="#exampleModalCenter"><i class="icon-shuffle"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h3><a href="product-details.html">Products Name 006</a></h3>
+                                <div class="price-box">
+                                    <span class="new-price">130.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single-product-wrap end -->
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <!-- single-product-wrap start -->
+                        <div class="single-product-wrap">
+                            <div class="product-image">
+                                <a href="product-details.html"><img src="static/images/product/7.jpg" alt=""></a>
+                                <div class="product-action">
+                                    <a href="#" class="wishlist"><i class="icon-heart"></i></a>
+                                    <a href="#" class="add-to-cart"><i class="icon-handbag"></i></a>
+                                    <a href="#" class="quick-view" data-toggle="modal" data-target="#exampleModalCenter"><i class="icon-shuffle"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h3><a href="product-details.html">Products Name 007</a></h3>
+                                <div class="price-box">
+                                    <span class="old-price">250.00</span>
+                                    <span class="new-price">230.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single-product-wrap end -->
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <!-- single-product-wrap start -->
+                        <div class="single-product-wrap">
+                            <div class="product-image">
+                                <a href="product-details.html"><img src="static/images/product/8.jpg" alt=""></a>
+                                <div class="product-action">
+                                    <a href="#" class="wishlist"><i class="icon-heart"></i></a>
+                                    <a href="#" class="add-to-cart"><i class="icon-handbag"></i></a>
+                                    <a href="#" class="quick-view" data-toggle="modal" data-target="#exampleModalCenter"><i class="icon-shuffle"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h3><a href="product-details.html">Products Name 008</a></h3>
+                                <div class="price-box">
+                                    <span class="new-price">120.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single-product-wrap end -->
+                    </div>
+                </div>
+            </div>
+            <!-- product-warpper start -->
+        </div>
+    </div>
+    <!-- product-area end -->
+    
+    <!-- lg-banner-bg start -->
+    <div class="lg-banner-area lg-banner-bg-2 section-ptb">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 offset-lg-5">
+                    <div class="lg-banner-info text-center mt--30 mb--30">
+                        <h2>Contrary to popular belief is not simply rand.</h2>
+                        <a href="" class="btn more-product-btn">MORE PRODUCTS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- lg-banner-bg end -->
+    
+    <!-- product-area start -->
+    <div class="product-area section-ptb">
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- section-title start -->
+                    <div class="section-title">
+                        <h2>Featured Products</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                    </div>
+                    <!-- section-title end -->
+                </div>
+            </div>
+            
+            <!-- product-warpper start -->
+            <div class="product-warpper">
+                <div class="product-slider row">
+                    <div class="col">
+                        <!-- single-product-wrap start -->
+                        <div class="single-product-wrap">
+                            <div class="product-image">
+                                <a href="product-details.html"><img src="static/images/product/9.jpg" alt=""></a>
+                                <div class="product-action">
+                                    <a href="#" class="wishlist"><i class="icon-heart"></i></a>
+                                    <a href="#" class="add-to-cart"><i class="icon-handbag"></i></a>
+                                    <a href="#" class="quick-view" data-toggle="modal" data-target="#exampleModalCenter"><i class="icon-shuffle"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h3><a href="product-details.html">Products Name 009</a></h3>
+                                <div class="price-box">
+                                    <span class="old-price">150.00</span>
+                                    <span class="new-price">125.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single-product-wrap end -->
+                    </div>
+                    <div class="col">
+                        <!-- single-product-wrap start -->
+                        <div class="single-product-wrap">
+                            <div class="product-image">
+                                <a href="product-details.html"><img src="static/images/product/10.jpg" alt=""></a>
+                                <div class="product-action">
+                                    <a href="#" class="wishlist"><i class="icon-heart"></i></a>
+                                    <a href="#" class="add-to-cart"><i class="icon-handbag"></i></a>
+                                    <a href="#" class="quick-view" data-toggle="modal" data-target="#exampleModalCenter"><i class="icon-shuffle"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h3><a href="product-details.html">Products Name 003</a></h3>
+                                <div class="price-box">
+                                    <span class="old-price">144.00</span>
+                                    <span class="new-price">124.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single-product-wrap end -->
+                    </div>
+                    <div class="col">
+                        <!-- single-product-wrap start -->
+                        <div class="single-product-wrap">
+                            <div class="product-image">
+                                <a href="product-details.html"><img src="static/images/product/11.jpg" alt=""></a>
+                                <div class="product-action">
+                                    <a href="#" class="wishlist"><i class="icon-heart"></i></a>
+                                    <a href="#" class="add-to-cart"><i class="icon-handbag"></i></a>
+                                    <a href="#" class="quick-view" data-toggle="modal" data-target="#exampleModalCenter"><i class="icon-shuffle"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h3><a href="product-details.html">Products Name 005</a></h3>
+                                <div class="price-box">
+                                    <span class="old-price">130.00</span>
+                                    <span class="new-price">120.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single-product-wrap end -->
+                    </div>
+                    <div class="col">
+                        <!-- single-product-wrap start -->
+                        <div class="single-product-wrap">
+                            <div class="product-image">
+                                <a href="product-details.html"><img src="static/images/product/12.jpg" alt=""></a>
+                                <div class="product-action">
+                                    <a href="#" class="wishlist"><i class="icon-heart"></i></a>
+                                    <a href="#" class="add-to-cart"><i class="icon-handbag"></i></a>
+                                    <a href="#" class="quick-view" data-toggle="modal" data-target="#exampleModalCenter"><i class="icon-shuffle"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h3><a href="product-details.html">Products Name 012</a></h3>
+                                <div class="price-box">
+                                    <span class="new-price">120.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single-product-wrap end -->
+                    </div>
+                    <div class="col">
+                        <!-- single-product-wrap start -->
+                        <div class="single-product-wrap">
+                            <div class="product-image">
+                                <a href="product-details.html"><img src="static/images/product/3.jpg" alt=""></a>
+                                <div class="product-action">
+                                    <a href="#" class="wishlist"><i class="icon-heart"></i></a>
+                                    <a href="#" class="add-to-cart"><i class="icon-handbag"></i></a>
+                                    <a href="#" class="quick-view" data-toggle="modal" data-target="#exampleModalCenter"><i class="icon-shuffle"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h3><a href="product-details.html">Products Name 001</a></h3>
+                                <div class="price-box">
+                                    <span class="old-price">140.00</span>
+                                    <span class="new-price">120.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single-product-wrap end -->
+                    </div>
+                    <div class="col">
+                        <!-- single-product-wrap start -->
+                        <div class="single-product-wrap">
+                            <div class="product-image">
+                                <a href="product-details.html"><img src="static/images/product/7.jpg" alt=""></a>
+                                <div class="product-action">
+                                    <a href="#" class="wishlist"><i class="icon-heart"></i></a>
+                                    <a href="#" class="add-to-cart"><i class="icon-handbag"></i></a>
+                                    <a href="#" class="quick-view" data-toggle="modal" data-target="#exampleModalCenter"><i class="icon-shuffle"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h3><a href="product-details.html">Products Name 001</a></h3>
+                                <div class="price-box">
+                                    <span class="old-price">140.00</span>
+                                    <span class="new-price">120.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single-product-wrap end -->
+                    </div>
+                </div>
+            </div>
+            <!-- product-warpper start -->
+        </div>
+    </div>
+    <!-- product-area end -->
+    
+    <div class="our-service-area pb--70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    <div class="single-service text-center mb--30">
+                        <div class="service-icon">
+                            <img src="static/images/icon/s-2.png" alt="">
+                        </div>
+                        <div class="service-content">
+                            <h3>Free Home Delivary.</h3>
+                            <p>Delivery in 24 hours</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="single-service text-center mb--30">
+                        <div class="service-icon">
+                            <img src="static/images/icon/s-1.png" alt="">
+                        </div>
+                        <div class="service-content">
+                            <h3>Refund Policy.</h3>
+                            <p>We refund damaged property and items</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="single-service text-center mb--30">
+                        <div class="service-icon">
+                            <img src="static/images/icon/s-3.png" alt="">
+                        </div>
+                        <div class="service-content">
+                            <h3>24 Hour Support.</h3>
+                            <p>You can contact us 24/7 in instagram messenger or by phone.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- testimonial-area start -->
+    <div class="testimonial-area testimonial-bg overlay section-ptb">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-md-2 col-md-8 col-sm-12">
+                    <div class="testimonial-slider">
+                        <div class="testimonial-inner text-center">
+                            <div class="test-cont">
+                                <img src="static/images/icon/2.png" alt="">
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form. There are many variations of passages.</p>
+                            </div>
+                            <div class="test-author">
+                                <h4>Michelle Mitchell</h4>
+                                <p>ui ux - Designer</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-inner text-center">
+                            <div class="test-cont">
+                                <img src="static/images/icon/2.png" alt="">
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form. There are many variations of passages.</p>
+                            </div>
+                            <div class="test-author">
+                                <h4>Michelle Mitchell</h4>
+                                <p>ui ux - Designer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- testimonial-area end -->
+    
+    <!-- secton-area start -->
+    <div class="secton-area section-pt">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-4 offset-lg-1">
+
+                </div>
+
+                <div class="col-lg-6 offset-lg-1">
+                    <div class="instagram-wrapper">
+                        <div class="instagram-title text-center">
+                            <h3>Follow us on Instagram <a href="#">@furniture</a></h3>
+                        </div>
+                        <div class="instagram-warp instagram-slider row">
+                            <div class="col-lg-6">
+                                <div class="single-instagram">
+                                    <a href="#"><img src="static/images/instagram/1.jpg" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="single-instagram">
+                                    <a href="#"><img src="static/images/instagram/2.jpg" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="single-instagram">
+                                    <a href="#"><img src="static/images/instagram/1.jpg" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- secton-area end -->
+    
+    
+    
+    <!-- our-brand-area start -->
+    <div class="our-brand-area section-ptb">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="our-brand-active">
+                        <div class="single-brand">
+                            <a href="#"><img src="static/images/brand/1.jpg" alt=""></a>
+                        </div>
+                        <div class="single-brand">
+                            <a href="#"><img src="static/images/brand/2.jpg" alt=""></a>
+                        </div>
+                        <div class="single-brand">
+                            <a href="#"><img src="static/images/brand/3.jpg" alt=""></a>
+                        </div>
+                        <div class="single-brand">
+                            <a href="#"><img src="static/images/brand/4.jpg" alt=""></a>
+                        </div>
+                        <div class="single-brand">
+                            <a href="#"><img src="static/images/brand/5.jpg" alt=""></a>
+                        </div>
+                        <div class="single-brand">
+                            <a href="#"><img src="static/images/brand/3.jpg" alt=""></a>
+                        </div>
+                        <div class="single-brand">
+                            <a href="#"><img src="static/images/brand/4.jpg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- our-brand-area end -->
+    
+{% endblock %}
