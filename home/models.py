@@ -43,9 +43,10 @@ class Product(models.Model):
 
 
 class Ad(models.Model):
-    name = models.CharField(max_length=500)
+    name = models.CharField(max_length=200)
     image = models.ImageField(upload_to='media')
-    description = models.TextField()
+    description = models.TextField(blank=True)
+    description2 = models.TextField(blank=True)
     rank = models.IntegerField()
 
     def __str__(self):

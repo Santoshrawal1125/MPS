@@ -12,6 +12,8 @@ class HomeView(Base):
     def get(self, request):
         self.views['sellings'] = TopSelling.objects.all
         self.views['news'] = Product.objects.filter(labels='new')
+        self.views['features'] = Product.objects.filter(labels='hot')
+        self.views['ads'] = Ad.objects.all
         return render(request, 'index-2.html', self.views)
 
 
