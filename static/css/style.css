@@ -1992,6 +1992,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   left: 0;
 }
 
+
+
 .testimonial-inner .test-cont > img {
   margin: auto;
 }
@@ -2003,6 +2005,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   color: #ffffff;
   padding: 0 2px;
 }
+
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   .testimonial-inner .test-cont p {
     font-size: 20px;

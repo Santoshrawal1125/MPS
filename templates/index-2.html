@@ -125,36 +125,29 @@
     <!-- product-area end -->
     
     <!-- testimonial-area start -->
+    {% for ad in ads %}
+    {% if ad.rank == 1 %}
     <div class="testimonial-area testimonial-bg overlay section-ptb">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-md-2 col-md-8 col-sm-12">
-                    <div class="testimonial-slider">
+
                         <div class="testimonial-inner text-center">
                             <div class="test-cont">
-                                <img src="media/icon/2.png" alt="">
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form. There are many variations of passages.</p>
+                                <img src="{{ad.image.url}}" alt="image loading">
+                                <p>{{ad.description}}</p>
                             </div>
                             <div class="test-author">
-                                <h4>Michelle Mitchell</h4>
-                                <p>ui ux - Designer</p>
+<!--                                <h4>{{ad.name}}</h4>-->
                             </div>
                         </div>
-                        <div class="testimonial-inner text-center">
-                            <div class="test-cont">
-                                <img src="media/icon/2.png" alt="">
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form. There are many variations of passages.</p>
-                            </div>
-                            <div class="test-author">
-                                <h4>Michelle Mitchell</h4>
-                                <p>ui ux - Designer</p>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
     </div>
+    {% endif %}
+    {% endfor %}
     <!-- testimonial-area end -->
     
     <!-- product-area start -->
@@ -252,76 +245,32 @@
     </div>
     
     <!-- testimonial-area start -->
+    {% for ad in ads %}
+    {% if ad.rank == 2 %}
     <div class="testimonial-area testimonial-bg overlay section-ptb">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-md-2 col-md-8 col-sm-12">
-                    <div class="testimonial-slider">
+
                         <div class="testimonial-inner text-center">
                             <div class="test-cont">
-                                <img src="media/icon/2.png" alt="">
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form. There are many variations of passages.</p>
+                                <img src="{{ad.image.url}}" alt="image loading">
+                                <p>{{ad.description}}</p>
                             </div>
                             <div class="test-author">
-                                <h4>Michelle Mitchell</h4>
-                                <p>ui ux - Designer</p>
+<!--                                <h4>{{ad.name}}</h4>-->
                             </div>
                         </div>
-                        <div class="testimonial-inner text-center">
-                            <div class="test-cont">
-                                <img src="media/icon/2.png" alt="">
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form. There are many variations of passages.</p>
-                            </div>
-                            <div class="test-author">
-                                <h4>Michelle Mitchell</h4>
-                                <p>ui ux - Designer</p>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
     </div>
+    {% endif %}
+    {% endfor %}
     <!-- testimonial-area end -->
     
-    <!-- secton-area start -->
-    <div class="secton-area section-pt">
-        <div class="container">
 
-            <div class="row">
-                <div class="col-lg-4 offset-lg-1">
-
-                </div>
-
-                <div class="col-lg-6 offset-lg-1">
-                    <div class="instagram-wrapper">
-                        <div class="instagram-title text-center">
-                            <h3>Follow us on Instagram : <a href="#">Milan Photo Studio</a></h3>
-                        </div>
-                        <div class="instagram-warp instagram-slider row">
-                            <div class="col-lg-6">
-                                <div class="single-instagram">
-                                    <a href="#"><img src="media/instagram/1.jpg" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="single-instagram">
-                                    <a href="#"><img src="media/instagram/2.jpg" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="single-instagram">
-                                    <a href="#"><img src="media/instagram/1.jpg" alt=""></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <!-- secton-area end -->
     
     
     

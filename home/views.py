@@ -20,6 +20,7 @@ class HomeView(Base):
 class About(Base):
 
     def get(self, request):
+        self.views['members'] = Member.objects.all
         return render(request, 'about-us.html', self.views)
 
 
@@ -62,6 +63,7 @@ class Error(Base):
 class Shop(Base):
 
     def get(self, request):
+        self.views['products'] = Product.objects.all
         return render(request, 'shop.html', self.views)
 
 

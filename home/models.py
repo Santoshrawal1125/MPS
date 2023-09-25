@@ -51,3 +51,10 @@ class Ad(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Member(models.Model):
+    name = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='media')
+    description = models.TextField()
+    position = models.CharField(max_length=200)
