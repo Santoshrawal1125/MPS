@@ -21,147 +21,27 @@
     </div>
     <!-- main-search start -->
     
-    <!-- breadcrumb-area start -->
-    <div class="breadcrumb-area section-ptb">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <h2 class="breadcrumb-title">Blog Details</h2>
-                    <!-- breadcrumb-list start -->
-                    <ul class="breadcrumb-list">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active">Blog Details</li>
-                    </ul>
-                    <!-- breadcrumb-list end -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- breadcrumb-area end -->
-    
+
     <!-- main-content-wrap start -->
     <div class="main-content-wrap blog-page section-ptb">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 order-lg-1 order-2">
-                    <!-- shop-sidebar-wrap start -->
-                    <div class="shop-sidebar-wrap">
-                        <!-- shop-sidebar start -->
-                        <div class="shop-sidebar mb--30">
-                            <h4 class="title">Search</h4>
-                            <div class="search-post">
-                                <form  action="#">
-                                    <input type="text" placeholder="Enter Keywords...">
-                                    <button class=" btn-search" type="submit"><i class="ion-ios-search-strong"></i></button>
-                                </form>
-                            </div>
-                        </div>
-                        <!-- shop-sidebar end -->
-                        
-                        <!-- shop-sidebar start -->
-                        <div class="shop-sidebar mb--30">
-                            <h4 class="title">CATEGORIES</h4>
-                            <ul>  
-                                <li><a href="shop.html">Accessories <span>(18)</span></a></li>
-                                <li><a href="shop.html">Kids <span>(16)</span></a></li>
-                                <li><a href="shop.html">Men <span>(6)</span></a></li>
-                                <li><a href="shop.html">Women <span>(11)</span></a></li>
-                            </ul>
-                        </div>
-                        <!-- shop-sidebar end -->
-                        
-                        <!-- shop-sidebar start -->
-                        <div class="sidbar-product shop-sidebar mb--30">
-                            <h4 class="title">best product</h4>
-                            <!-- sidbar-product-inner start -->
-                            <div class="sidbar-product-inner">
-                                <div class="product-image">
-                                    <a href="product-details.html"><img src="assets/images/product/10.jpg" alt=""></a>
-                                </div>
-                                <div class="product-content text-left">
-                                    <h3><a href="product-details.html">Products Name 003</a></h3>
-                                    <div class="price-box">
-                                        <span class="new-price">120.00</span>
-                                        <span class="old-price">130.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- sidbar-product-inner end -->
-                            <!-- sidbar-product-inner start -->
-                            <div class="sidbar-product-inner">
-                                <div class="product-image">
-                                    <a href="product-details.html"><img src="assets/images/product/11.jpg" alt=""></a>
-                                </div>
-                                <div class="product-content text-left">
-                                    <h3><a href="product-details.html">Products Name 011</a></h3>
-                                    <div class="price-box">
-                                        <span class="new-price">140.00</span>
-                                        <span class="old-price">103.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- sidbar-product-inner end -->
-                            <!-- sidbar-product-inner start -->
-                            <div class="sidbar-product-inner">
-                                <div class="product-image">
-                                    <a href="product-details.html"><img src="assets/images/product/5.jpg" alt=""></a>
-                                </div>
-                                <div class="product-content text-left">
-                                    <h3><a href="product-details.html">Products Name 008</a></h3>
-                                    <div class="price-box">
-                                        <span class="new-price">160.00</span>
-                                        <span class="old-price">121.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- sidbar-product-inner end -->
-                        </div>
-                        <!-- shop-sidebar end -->
-                        
-                        <!-- shop-sidebar start -->
-                        <div class="shop-sidebar mb--30">
-                            <h4 class="title">SIZE</h4>
-                            <ul>  
-                                <li><a href="shop.html">S <span>(11)</span></a></li>
-                                <li><a href="shop.html">M <span>(13)</span></a></li>
-                                <li><a href="shop.html">L <span>(6)</span></a></li>
-                                <li><a href="shop.html">XLL <span>(51)</span></a></li>
-                                <li><a href="shop.html">XXL <span>(3)</span></a></li>
-                            </ul>
-                        </div>
-                        <!-- shop-sidebar end -->
-                        
-                        
-                        <!-- shop-sidebar start -->
-                        <div class="shop-sidebar">
-                            <h4 class="title">Hot Tags</h4>
-                            <div class="sidebar-tag">
-                                <a href="#">Women</a>
-                                <a href="#">Bags</a>
-                                <a href="#">Man</a>
-                                <a href="#">Hot</a>
-                                <a href="#">fashion</a>
-                                <a href="#">digital</a>
-                            </div>
-                        </div>
-                        <!-- shop-sidebar end -->
-                    </div>
-                    <!-- shop-sidebar-wrap end -->
-                </div>
+
                 <div class="col-lg-9 order-lg-2 order-1">
                     <!-- blog-details-wrapper start -->
                     <div class="blog-details-wrapper">
+                        {% for blog in blogs %}
                         <div class="blog-details-image">
-                            <img src="assets/images/blog/7.jpg" alt="">
+                            <img src="{{blog.image.url}}" alt="">
                         </div>
                         <div class="postinfo-wrapper">
                             <div class="post-info">
-                                <p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue condimentum rhoncus. Praesent ornare tortor ac ante egestas hendrerit. Aliquam et metus pharetra, bibendum massa nec, fermentum odio. Nunc id leo ultrices, mollis ligula in, finibus tortor. Mauris eu dui ut lectus fermentum eleifend. Pellentesque faucibus sem ante, non malesuada odio varius nec. Suspendisse potenti. </p>
+                               <h3> <b> {{blog.title}} </b> </h3>
+                                <p>{{blog.full_body}}</p>
                                 <blockquote class="blockquote-inner">
-                                    <p>Quisque semper nunc vitae erat pellentesque, ac placerat arcu consectetur. In venenatis elit ac ultrices convallis. Duis est nisi, tincidunt ac urna sed, cursus blandit lectus. In ullamcorper sit amet ligula ut eleifend. Proin dictum tempor ligula, ac feugiat metus. Sed finibus tortor eu scelerisque scelerisque.</p>
+                                    <p> {{blog.quote}}</p>
                                 </blockquote>
-                                <p>Aenean et tempor eros, vitae sollicitudin velit. Etiam varius enim nec quam tempor, sed efficitur ex ultrices. Phasellus pretium est vel dui vestibulum condimentum. Aenean nec suscipit nibh. Phasellus nec lacus id arcu facilisis elementum. Curabitur lobortis, elit ut elementum congue, erat ex bibendum odio, nec iaculis lacus sem non lorem. Duis suscipit metus ante, sed convallis quam posuere quis. Ut tincidunt eleifend odio, ac fringilla mi vehicula nec. Nunc vitae lacus eget lectus imperdiet tempus sed in dui. Nam molestie magna at risus consectetur, placerat suscipit justo dignissim. Sed vitae fringilla enim, nec ullamcorper arcu.</p>
-                                <p>Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis. Praesent pretium tellus in tortor viverra condimentum. Nullam dignissim facilisis nisl, accumsan placerat justo ultricies vel. Vivamus finibus mi a neque pretium, ut convallis dui lacinia. Morbi a rutrum velit. Curabitur sagittis quam quis consectetur mattis. Aenean sit amet quam vel turpis interdum sagittis et eget neque. Nunc ante quam, luctus et neque a, interdum iaculis metus. Aliquam vel ante mattis, placerat orci id, vehicula quam. Suspendisse quis eros cursus, viverra urna sed, commodo mauris. Cras diam arcu, fringilla a sem condimentum, viverra facilisis nunc. Curabitur vitae orci id nulla maximus maximus. Nunc pulvinar sollicitudin molestie.</p>
+                        {% endfor %}
                                 <div class="post-commet">
                                     <a class="blog-comment" href="#">0 COMMENT</a>
                                     <ul class="social-icons">
@@ -176,7 +56,7 @@
                                     <!-- Start Single Review -->
                                     <div class="pro_review">
                                         <div class="review_thumb">
-                                            <img alt="review images" src="assets/images/review/1.jpg">
+                                            <img alt="review images" src="/media/review/1.jpg">
                                         </div>
                                         <div class="review_details">
                                             <div class="review_info">
@@ -202,7 +82,7 @@
                                     <!-- Start Single Review -->
                                     <div class="pro_review ans">
                                         <div class="review_thumb">
-                                            <img alt="review images" src="assets/images/review/2.jpg">
+                                            <img alt="review images" src="/media/review/2.jpg">
                                         </div>
                                         <div class="review_details">
                                             <div class="review_info">

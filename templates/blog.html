@@ -20,24 +20,7 @@
         </div>
     </div>
     <!-- main-search start -->
-    
-    <!-- breadcrumb-area start -->
-    <div class="breadcrumb-area section-ptb">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <h2 class="breadcrumb-title">Blog Full Width</h2>
-                    <!-- breadcrumb-list start -->
-                    <ul class="breadcrumb-list">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active">Blog Full Width</li>
-                    </ul>
-                    <!-- breadcrumb-list end -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- breadcrumb-area end -->
+
     
     <!-- main-content-wrap start -->
     <div class="main-content-wrap blog-page section-ptb">
@@ -50,21 +33,24 @@
                         <!-- blog-wrap start -->
                         <div class="blog-wrap">
                             <!-- single-blog-area start -->
+
+                            {% for blog in blogs %}
+
                             <div class="single-blog-area">
                                 <div class="blog-image">
-                                    <a href="blog-details.html"><img src="/media/blog/2.jpg" alt=""></a>
+                                    <a href="/blog-details/{{blog.id}}"><img src="{{blog.image.url}}" alt=""></a>
                                 </div>
                                 <div class="blog-contend">
-                                    <h3><a href="#">Blog image post</a></h3>
+                                    <h3><a href="#">{{blog.title}}</a></h3>
                                     <div class="blog-date-categori">
                                         <ul>
-                                            <li><a href="#"><i class="ion-ios-person"></i> Admin </a></li>
+                                            <li><a href="#"><i class="ion-ios-person"></i> {{blog.name}} </a></li>
                                             <li><a href="#"><i class="ion-ios-pricetags"></i> Comments </a></li>
                                         </ul>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adip elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                                    <p>{{blog.body}}</p>
                                     <div class="mt-30 blog-more-area">
-                                        <a href="blog-details.html" class="blog-btn btn">Read more</a>
+                                        <a href="/blog-details/{{blog.id}}" class="blog-btn btn">Read more</a>
                                         <ul class="social-icons">
                                             <li><a href="#"><i class="ion-social-facebook"></i></a></li>
                                             <li><a href="#"><i class="ion-social-twitter"></i></a></li>
@@ -74,91 +60,10 @@
                                     </div>
                                 </div>
                             </div>
+                            {% endfor %}
+
                             <!-- single-blog-area end -->
-                            <!-- single-blog-area start -->
-                            <div class="single-blog-area">
-                                <div class="blog-image-slider">
-                                    <a href="blog-details.html"><img src="/media/blog/3.jpg" alt=""></a>
-                                    <a href="blog-details.html"><img src="/media/blog/1.jpg" alt=""></a>
-                                    <a href="blog-details.html"><img src="/media/blog/4.jpg" alt=""></a>
-                                </div>
-                                <div class="blog-contend">
-                                    <h3><a href="#">Post with Gallery </a></h3>
-                                    <div class="blog-date-categori">
-                                        <ul>
-                                            <li><a href="#"><i class="ion-ios-person"></i> Admin </a></li>
-                                            <li><a href="#"><i class="ion-ios-pricetags"></i> Comments </a></li>
-                                        </ul>
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adip elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                                    <div class="mt-30 blog-more-area">
-                                        <a href="blog-details.html" class="blog-btn btn">Read more</a>
-                                        <ul class="social-icons">
-                                            <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                            <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                            <li><a href="#"><i class="ion-social-dribbble"></i></a></li>
-                                            <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single-blog-area end -->
-                            <!-- single-blog-area start -->
-                            <div class="single-blog-area">
-                                <div class="blog-image">
-                                    <div class="blog-audio embed-responsive embed-responsive-16by9">
-                                        <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/244702956&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
-                                    </div>
-                                </div>
-                                <div class="blog-contend">
-                                    <h3><a href="#">Post With Audio</a></h3>
-                                    <div class="blog-date-categori">
-                                        <ul>
-                                            <li><a href="#"><i class="ion-ios-person"></i> Admin </a></li>
-                                            <li><a href="#"><i class="ion-ios-pricetags"></i> Comments </a></li>
-                                        </ul>
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adip elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                                    <div class="mt-30 blog-more-area">
-                                        <a href="blog-details.html" class="blog-btn btn">Read more</a>
-                                        <ul class="social-icons">
-                                            <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                            <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                            <li><a href="#"><i class="ion-social-dribbble"></i></a></li>
-                                            <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single-blog-area end -->
-                            <!-- single-blog-area start -->
-                            <div class="single-blog-area">
-                                <div class="blog-image">
-                                    <div class="embed-responsive embed-responsive-16by9">
-                                       <iframe width="600" height="400" frameborder="0" allowfullscreen="true" src="https://www.youtube.com/embed/5T-_dYz8Uvw"></iframe>
-                                    </div>
-                                </div>
-                                <div class="blog-contend">
-                                    <h3><a href="#">Post with Video</a></h3>
-                                    <div class="blog-date-categori">
-                                        <ul>
-                                            <li><a href="#"><i class="ion-ios-person"></i> Admin </a></li>
-                                            <li><a href="#"><i class="ion-ios-pricetags"></i> Comments </a></li>
-                                        </ul>
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adip elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                                    <div class="mt-30 blog-more-area">
-                                        <a href="blog-details.html" class="blog-btn btn">Read more</a>
-                                        <ul class="social-icons">
-                                            <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                            <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                            <li><a href="#"><i class="ion-social-dribbble"></i></a></li>
-                                            <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single-blog-area end -->
+
                         </div>
                         <!-- blog-wrap end -->
                         

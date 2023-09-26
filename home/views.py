@@ -24,15 +24,17 @@ class About(Base):
         return render(request, 'about-us.html', self.views)
 
 
-class Blog(Base):
+class BlogView(Base):
 
     def get(self, request):
+        self.views['blogs'] = Blog.objects.all
         return render(request, 'blog.html', self.views)
 
 
 class BlogDetails(Base):
 
-    def get(self, request):
+    def get(self, request, id):
+        self.views['blogs'] = Blog.objects.filter(id=id)
         return render(request, 'blog-details.html', self.views)
 
 
@@ -48,9 +50,24 @@ class Checkout(Base):
         return render(request, 'checkout.html', self.views)
 
 
-class Contact(Base):
+class ContactView(Base):
 
     def get(self, request):
+        return render(request, 'contact-us.html', self.views)
+
+    def post(self, request):
+        if request.method == 'POST':
+            name = request.POST['name']
+            email = request.POST['email']
+            message = request.POST['message']
+
+            data = Contact.objects.create(
+                name=name,
+                email=email,
+                message=message
+            )
+            data.save()
+
         return render(request, 'contact-us.html', self.views)
 
 
