@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 
-    
+
     <!-- main-search start -->
     <div class="main-search-active">
         <div class="sidebar-search-icon">
@@ -20,7 +20,7 @@
         </div>
     </div>
     <!-- main-search start -->
-    
+
     <!-- breadcrumb-area start -->
     <div class="breadcrumb-area section-ptb">
         <div class="container">
@@ -38,7 +38,7 @@
         </div>
     </div>
     <!-- breadcrumb-area end -->
-    
+
     <!-- main-content-wrap start -->
     <div class="main-content-wrap shop-page section-ptb">
         <div class="container">
@@ -49,15 +49,15 @@
                         <!-- shop-sidebar start -->
                         <div class="shop-sidebar mb--30">
                             <h4 class="title">CATEGORIES</h4>
-                            <ul>
 
-                            {% for cat in categories %}
+                            <ul>
+                                {% for cat in categories %}
                                 <li><a href="/category/{{cat.slug}}">{{cat.name}}</a></li>
-                            {% endfor %}
+                                {% endfor %}
                             </ul>
                         </div>
                         <!-- shop-sidebar end -->
-                        
+
                         <!-- shop-sidebar start -->
                         <div class="shop-sidebar mb--30">
                             <h4 class="title">FILTER BY PRICE</h4>
@@ -67,7 +67,7 @@
                                     <div id="price-slider" class="price-slider"></div>
                                     <div class="filter-price-wapper">
                                         <div class="filter-price-cont">
-                                            <span>Price:</span> 
+                                            <span>Price:</span>
                                             <div class="input-type">
                                                 <input type="text" id="min-price" readonly=""/>
                                             </div>
@@ -80,12 +80,12 @@
                                             </a>
                                         </div>
                                     </div>
-                                </form>  
+                                </form>
                             </div>
                             <!-- filter-price-content end -->
                         </div>
                         <!-- shop-sidebar end -->
-                        
+
                         <!-- shop-sidebar start -->
                         <div class="shop-sidebar">
                             <h4 class="title">Hot Tags</h4>
@@ -145,12 +145,12 @@
                                     <div class="shop-product-wrap">
                                         <div class="row">
 
-                                            {% for product in products %}
+                                            {% for cat in cat_products %}
                                             <div class="col-lg-4 col-md-4 col-sm-6">
                                                 <!-- single-product-wrap start -->
                                                 <div class="single-product-wrap">
                                                     <div class="product-image">
-                                                        <a href="product-details.html"><img src="{{product.image.url}}" alt=""></a>
+                                                        <a href="product-details.html"><img src="{{cat.image.url}}" alt=""></a>
                                                         <div class="product-action">
                                                             <a href="#" class="wishlist"><i class="icon-heart"></i></a>
                                                             <a href="#" class="add-to-cart"><i class="icon-handbag"></i></a>
@@ -158,14 +158,14 @@
                                                         </div>
                                                     </div>
                                                     <div class="product-content">
-                                                        <h3><a href="product-details.html">{{product.name}}</a></h3>
+                                                        <h3><a href="product-details.html">{{cat.name}}</a></h3>
                                                         <div class="price-box">
-                                                            {% if product.discounted_price > 0 %}
-                                                            <h3><span style="text-decoration: line-through;">Rs. {{product.price}}</span>
-                                                              <span>Rs. </span>{{product.discounted_price}}</h3>
+                                                            {% if cat.discounted_price > 0 %}
+                                                            <h3><span style="text-decoration: line-through;">Rs. {{cat.price}}</span>
+                                                              <span>Rs. </span>{{cat.discounted_price}}</h3>
 
                                                                {% else %}
-                                                       <h3><span>Rs. </span>{{product.price}}</h3>
+                                                       <h3><span>Rs. </span>{{cat.price}}</h3>
                                                 {% endif %}
                                                         </div>
                                                     </div>
@@ -316,7 +316,7 @@
                             </div>
                         </div>
                         <!-- shop-products-wrap end -->
-                        
+
                         <!-- paginatoin-area start -->
                         <div class="paginatoin-area">
                             <div class="row">
@@ -345,5 +345,5 @@
         </div>
     </div>
     <!-- main-content-wrap end -->
-    
+
 {% endblock %}

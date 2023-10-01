@@ -17,6 +17,14 @@ class HomeView(Base):
         return render(request, 'index-2.html', self.views)
 
 
+class CategoryView(Base):
+    def get(self, request, slug):
+        cat_id = Category.objects.get(slug=slug).id
+        self.views['cat_products'] = Product.objects.filter(category_id=cat_id)
+        self.views['categories'] = Category.objects.all()
+        return render(request, 'category.html', self.views)
+
+
 class About(Base):
 
     def get(self, request):
@@ -81,6 +89,7 @@ class Shop(Base):
 
     def get(self, request):
         self.views['products'] = Product.objects.all
+        self.views['categories'] = Category.objects.all()
         return render(request, 'shop.html', self.views)
 
 

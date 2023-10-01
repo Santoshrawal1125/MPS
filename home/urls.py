@@ -10,6 +10,7 @@ urlpatterns = [
     path('contact-us/', ContactView.as_view(), name='contact'),
     path('login-register/', LoginRegister.as_view(), name='login'),
     path('cart/', Cart.as_view(), name='cart'),
-    path('checkout/', Checkout.as_view(), name='checkout')
+    path('checkout/', Checkout.as_view(), name='checkout'),
+    path('category/<slug>', CategoryView.as_view(), name='category'),
 
 ]
