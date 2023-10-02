@@ -13,5 +13,6 @@ urlpatterns = [
     path('checkout/', Checkout.as_view(), name='checkout'),
     path('category/<slug>', CategoryView.as_view(), name='category'),
     path('product/<slug>', ProductDetails.as_view(), name='product'),
+    path('search', SearchView.as_view(), name='search'),
 
 ]

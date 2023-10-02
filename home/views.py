@@ -104,3 +104,16 @@ class ProductDetails(Base):
     def get(self, request, slug):
         self.views['products_detail'] = Product.objects.filter(slug=slug)
         return render(request, 'product-details.html', self.views)
+
+
+class SearchView(Base):
+    def get(self, request):
+        if request.method == 'GET':
+            query = request.GET['query']
+            if query != "":
+                self.views['search_products'] = Product.objects.filter(name__icontains=query)
+            else:
+                redirect('/')
+
+        self.views['categories'] = Category.objects.all()
+        return render(request, 'search.html', self.views)
