@@ -88,7 +88,7 @@ class Error(Base):
 class Shop(Base):
 
     def get(self, request):
-        self.views['products'] = Product.objects.all
+        self.views['products'] = Product.objects.all()
         self.views['categories'] = Category.objects.all()
         return render(request, 'shop.html', self.views)
 
@@ -97,3 +97,10 @@ class LoginRegister(Base):
 
     def get(self, request):
         return render(request, 'login-register.html', self.views)
+
+
+class ProductDetails(Base):
+
+    def get(self, request):
+        self.views['products'] = Product.objects.all()
+        return render(request, 'product-details.html',self.views)
