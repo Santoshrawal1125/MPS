@@ -101,6 +101,6 @@ class LoginRegister(Base):
 
 class ProductDetails(Base):
 
-    def get(self, request):
-        self.views['products'] = Product.objects.all()
-        return render(request, 'product-details.html',self.views)
+    def get(self, request, slug):
+        self.views['products_detail'] = Product.objects.filter(slug=slug)
+        return render(request, 'product-details.html', self.views)

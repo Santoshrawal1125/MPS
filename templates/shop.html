@@ -137,7 +137,7 @@
                                                 <!-- single-product-wrap start -->
                                                 <div class="single-product-wrap">
                                                     <div class="product-image">
-                                                        <a href="{% url 'product-details' %}"><img src="{{product.image.url}}" alt=""></a>
+                                                        <a href="/product/{{product.slug}}"><img src="{{product.image.url}}" alt=""></a>
                                                         <div class="product-action">
                                                             <a href="#" class="wishlist"><i class="icon-heart"></i></a>
                                                             <a href="#" class="add-to-cart"><i class="icon-handbag"></i></a>
@@ -145,7 +145,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="product-content">
-                                                        <h3><a href="{% url 'product-details' %}">{{product.name}}</a></h3>
+                                                        <h3><a href="/product/{{product.slug}}">{{product.name}}</a></h3>
                                                         <div class="price-box">
                                                             {% if product.discounted_price > 0 %}
                                                             <h3><span style="text-decoration: line-through;">Rs. {{product.price}}</span>
