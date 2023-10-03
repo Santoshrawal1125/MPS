@@ -1,6 +1,10 @@
 from django.shortcuts import render, redirect
 from .models import *
+# Create your views here.
+# from django.views import View
 from django.views.generic import View
+from django.contrib import messages
+from django.contrib.auth.models import User
 
 
 class Base(View):
@@ -85,18 +89,18 @@ class Error(Base):
         return render(request, 'error404.html', self.views)
 
 
+class MyAccount(Base):
+
+    def get(self, request):
+        return render(request, 'my-account.html', self.views)
+
+
 class Shop(Base):
 
     def get(self, request):
         self.views['products'] = Product.objects.all()
         self.views['categories'] = Category.objects.all()
         return render(request, 'shop.html', self.views)
-
-
-class LoginRegister(Base):
-
-    def get(self, request):
-        return render(request, 'login-register.html', self.views)
 
 
 class ProductDetails(Base):
@@ -117,3 +121,31 @@ class SearchView(Base):
 
         self.views['categories'] = Category.objects.all()
         return render(request, 'search.html', self.views)
+
+
+def signup(request):
+    if request.method == "POST":
+
+        username = request.POST['uname']
+        email = request.POST['email']
+        password = request.POST['password']
+        cpassword = request.POST['cpassword']
+        if password == cpassword:
+            if User.objects.filter(username=username).exists():
+                messages.error(request, "The username is already taken")
+                return redirect('/login')
+            elif User.objects.filter(email=email).exists():
+                messages.error(request, "The email is already used")
+                return redirect('/login')
+            else:
+                data = User.objects.create_user(
+                    username=username,
+                    email=email,
+                    password=password,
+                )
+                data.save()
+        else:
+            messages.error(request, "The passwords do not match")
+            return redirect('/login')
+
+    return render(request, 'login.html')

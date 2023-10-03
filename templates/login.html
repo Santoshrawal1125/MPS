@@ -59,10 +59,11 @@
                             <div id="lg1" class="tab-pane active">
                                 <div class="login-form-container">
                                     <div class="login-register-form">
-                                        <form action="#" method="post">
+                                        <form  method="POST">
+
                                             <div class="login-input-box">
-                                                <input type="text" name="user-name" placeholder="User Name">
-                                                <input type="password" name="user-password" placeholder="Password">
+                                                <input name="uname" type="text"  placeholder="User Name">
+                                                <input name="password" type="password"  placeholder="Password">
                                             </div>
                                             <div class="button-box">
                                                 <div class="login-toggle-btn">
@@ -80,18 +81,26 @@
                             </div>
                             <div id="lg2" class="tab-pane">
                                 <div class="login-form-container">
+
                                     <div class="login-register-form">
-                                        <form action="#" method="post">
+                                        <form method="POST">
+                                            {% csrf_token %}
+                                            {% for message in messages %}
+                                          <font color ="red"><center>{{message}}</center></font>
+                                            {% endfor %}
                                             <div class="login-input-box">
-                                                <input type="text" name="user-name" placeholder="User Name">
-                                                <input type="password" name="user-password" placeholder="Password">
-                                                <input name="user-email" placeholder="Email" type="email">
+                                                <input name="uname" type="text"  placeholder="User Name">
+                                                <input name="email" type="email" placeholder="Email" >
+                                                <input name="password" type="password"  placeholder="Password">
+                                                <input name="cpassword" type="password"  placeholder="Confirm Password">
+
                                             </div>
                                             <div class="button-box">
-                                                <button class="register-btn btn" type="submit"><span>Register</span></button>
+                                                <button class="register-btn btn" type="submit"><span>Sign Up</span></button>
                                             </div>
                                         </form>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
