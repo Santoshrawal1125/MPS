@@ -221,3 +221,44 @@ def reduce_cart(request, slug):
                 total=total
             )
         return redirect('/cart')
+
+
+class WishListView(Base):
+
+    def get(self, request):
+        username = request.user.username
+        self.views['wishlist'] = WishList.objects.filter(username=username)
+        return render(request, 'wishlist.html', self.views)
+
+
+def add_to_wishlist(request, slug):
+    username = request.user.username
+    if WishList.objects.filter(username=username, slug=slug):
+
+        return redirect('/wishlist')
+    else:
+
+        discounted_price = Product.objects.get(slug=slug).discounted_price
+        price = Product.objects.get(slug=slug).price
+        if discounted_price > 0:
+            total = discounted_price
+        else:
+            total = price
+
+        data = WishList.objects.create(
+            username=username,
+            slug=slug,
+
+            items=Product.objects.filter(slug=slug)[0]
+
+        )
+        data.save()
+        return redirect('/wishlist')
+
+
+def delete_wishlist(request, slug):
+    username = request.user.username
+    if WishList.objects.filter(slug=slug, username=username):
+        WishList.objects.filter(slug=slug, username=username).delete()
+
+    return redirect('/wishlist')

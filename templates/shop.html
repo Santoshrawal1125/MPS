@@ -139,7 +139,7 @@
                                                     <div class="product-image">
                                                         <a href="/product/{{product.slug}}"><img src="{{product.image.url}}" alt=""></a>
                                                         <div class="product-action">
-                                                            <a href="#" class="wishlist"><i class="icon-heart"></i></a>
+                                                            <a href="/add_to_wishlist/{{product.slug}}" class="wishlist"><i class="icon-heart"></i></a>
                                                             <a href="/add_to_cart/{{product.slug}}" class="add-to-cart"><i class="icon-handbag"></i></a>
                                                             <a href="#" class="quick-view" data-toggle="modal" data-target="#exampleModalCenter"><i class="icon-shuffle"></i></a>
                                                         </div>
@@ -153,7 +153,7 @@
 
                                                                {% else %}
                                                        <h3><span>Rs. </span>{{product.price}}</h3>
-                                                {% endif %}
+                                                            {% endif %}
                                                         </div>
                                                     </div>
                                                 </div>
