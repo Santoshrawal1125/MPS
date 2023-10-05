@@ -51,12 +51,6 @@ class BlogDetails(Base):
         return render(request, 'blog-details.html', self.views)
 
 
-class Cart(Base):
-
-    def get(self, request):
-        return render(request, 'cart.html', self.views)
-
-
 class Checkout(Base):
 
     def get(self, request):
@@ -150,3 +144,80 @@ def signup(request):
             messages.error(request, "The passwords do not match")
             return redirect('/signup')
     return render(request, 'signup.html')
+
+
+class CartView(Base):
+
+    def get(self, request):
+        username = request.user.username
+        self.views['my_cart'] = Cart.objects.filter(username=username)
+        return render(request, 'cart.html', self.views)
+
+
+def add_to_cart(request, slug):
+    username = request.user.username
+    if Cart.objects.filter(username=username, slug=slug, checkout=False):
+        price = Product.objects.get(slug=slug).price
+        discounted_price = Product.objects.get(slug=slug).discounted_price
+        quantity = Cart.objects.get(slug=slug).quantity
+        quantity = quantity + 1
+
+        if discounted_price > 0:
+            total = discounted_price * quantity
+        else:
+            total = price * quantity
+
+        Cart.objects.filter(username=username, slug=slug, checkout=False).update(
+            quantity=quantity,
+            total=total
+        )
+        return redirect('/cart')
+    else:
+
+        price = Product.objects.get(slug=slug).price
+        discounted_price = Product.objects.get(slug=slug).discounted_price
+        quantity = 1
+
+        if discounted_price > 0:
+            total = discounted_price
+        else:
+            total = price
+        data = Cart.objects.create(
+            username=username,
+            slug=slug,
+            quantity=quantity,
+            total=total,
+            items=Product.objects.filter(slug=slug)[0]
+
+        )
+        data.save()
+        return redirect('/cart')
+
+
+def delete_cart(request, slug):
+    username = request.user.username
+    if Cart.objects.filter(slug=slug, username=username, checkout=False):
+        Cart.objects.filter(slug=slug, username=username, checkout=False).delete()
+
+    return redirect('/cart')
+
+
+def reduce_cart(request, slug):
+    username = request.user.username
+    if Cart.objects.filter(username=username, slug=slug, checkout=False):
+        price = Product.objects.get(slug=slug).price
+        discounted_price = Product.objects.get(slug=slug).discounted_price
+        quantity = Cart.objects.get(slug=slug).quantity
+        if quantity > 1:
+            quantity = quantity - 1
+
+            if discounted_price > 0:
+                total = discounted_price * quantity
+            else:
+                total = price * quantity
+
+            Cart.objects.filter(username=username, slug=slug, checkout=False).update(
+                quantity=quantity,
+                total=total
+            )
+        return redirect('/cart')

@@ -9,11 +9,13 @@ urlpatterns = [
     path('blog-details/<int:id>', BlogDetails.as_view(), name='blog-details'),
     path('contact-us/', ContactView.as_view(), name='contact'),
     path('signup/', signup, name='signup'),
-    path('cart/', Cart.as_view(), name='cart'),
     path('checkout/', Checkout.as_view(), name='checkout'),
     path('category/<slug>', CategoryView.as_view(), name='category'),
     path('product/<slug>', ProductDetails.as_view(), name='product'),
     path('search', SearchView.as_view(), name='search'),
     path('my-account', MyAccount.as_view(), name='account'),
-
+    path('cart/', CartView.as_view(), name='cart'),
+    path('add_to_cart/<slug>', add_to_cart, name='add_to_cart'),
+    path('delete_cart/<slug>', delete_cart, name='delete_cart'),
+    path('reduce_cart/<slug>', reduce_cart, name='reduce_cart'),
 ]

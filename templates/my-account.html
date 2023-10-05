@@ -47,25 +47,25 @@
                            <div class="row align-items-center no-gutters">
                                <div class="col-lg-3 col-md-12">
                                    <div class="d-single-info">
-                                       <p class="user-name">Hello <span>Yourmail@info</span></p>
-                                       <p>(not yourmail@info? <a href="#">Log Out</a>)</p>
+                                       <p class="user-name">Hello <span>{{user.username}}</span></p>
+                                       <p>{{user.email}}</p>
                                    </div>
                                </div>
                                <div class="col-lg-4 col-md-12">
                                    <div class="d-single-info">
                                        <p>Need Assistance? Customer service at.</p>
-                                       <p>admin@devitems.com.</p>
+                                       <p>092421166</p>
                                    </div>
                                </div>
                                <div class="col-lg-3 col-md-12">
                                    <div class="d-single-info">
                                        <p>E-mail them at </p>
-                                       <p>support@yoursite.com</p>
+                                       <p>Milanphotostudio101@gmail.com</p>
                                    </div>
                                </div>
                                <div class="col-lg-2 col-md-12">
                                    <div class="d-single-info text-lg-center">
-                                       <a href="cart.html" class="view-cart"><i class="fa fa-cart-plus"></i>view cart</a>
+                                       <a href="{% url 'cart' %}" class="view-cart"><i class="fa fa-cart-plus"></i>view cart</a>
                                    </div>
                                </div>
                            </div>
@@ -76,7 +76,7 @@
                                 <ul role="tablist" class="nav flex-column dashboard-list">
                                     <li><a href="#dashboard" data-toggle="tab" class="nav-link active">Dashboard</a></li>
                                     <li> <a href="#orders" data-toggle="tab" class="nav-link">Orders</a></li>
-                                    <li><a href="#downloads" data-toggle="tab" class="nav-link">Downloads</a></li>
+
                                     <li><a href="#address" data-toggle="tab" class="nav-link">Addresses</a></li>
                                     <li><a href="#account-details" data-toggle="tab" class="nav-link">Account details</a></li>
 
@@ -123,35 +123,7 @@
                                             </table>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="downloads">
-                                        <h3>Downloads</h3>
-                                        <div class="table-responsive">
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Product</th>
-                                                        <th>Downloads</th>
-                                                        <th>Expires</th>
-                                                        <th>Download</th>	 	 	 	
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Haven - Free Real Estate PSD Template</td>
-                                                        <td>May 10, 2018</td>
-                                                        <td>never</td>
-                                                        <td><a href="#" class="view">Click Here To Download Your File</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Nevara - ecommerce html template</td>
-                                                        <td>Sep 11, 2018</td>
-                                                        <td>never</td>
-                                                        <td><a href="#" class="view">Click Here To Download Your File</a></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
+
                                     <div class="tab-pane" id="address">
                                        <p>The following addresses will be used on the checkout page by default.</p>
                                         <h4 class="billing-address">Billing address</h4>

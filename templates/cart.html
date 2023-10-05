@@ -58,36 +58,35 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                {% for cart in my_cart %}
                                     <tr>
-                                        <td class="plantmore-product-thumbnail"><a href="#"><img src="/media/cart/1.jpg" alt=""></a></td>
-                                        <td class="plantmore-product-name"><a href="#">Compete Track Tote</a></td>
-                                        <td class="plantmore-product-price"><span class="amount">$70.00</span></td>
+                                        <td class="plantmore-product-thumbnail"><a href="#"><img src="{{cart.items.image.url}}" alt=""></a></td>
+                                        <td class="plantmore-product-name"><a href="#">{{cart.items.name}}</a></td>
+
+                                        {% if cart.items.discounted_price > 0 %}
+                                        <td class="plantmore-product-price"><span class="amount">RS.{{cart.items.discounted_price}}</span></td>
+                                        {% else %}
+                                        <td class="plantmore-product-price"><span class="amount">RS.{{cart.items.price}}</span></td>
+                                        {% endif %}
+
                                         <td class="plantmore-product-quantity">
-                                            <input value="1" type="number">
+
+
+                                        <a href="/reduce_cart/{{cart.slug}}"><button class="btn-minus"><i class="fa fa-minus"></i></button></a>
+                                        <input value="{{ cart.quantity }}" type="text" id="quantity_{{ cart.slug }}" name="quantity">
+                                        <a href="/add_to_cart/{{ cart.slug }}"><button class="btn-plus"><i class="fa fa-plus"></i></button></a>
+
+
+
                                         </td>
-                                        <td class="product-subtotal"><span class="amount">$70.00</span></td>
-                                        <td class="plantmore-product-remove"><a href="#"><i class="ion-close"></i></a></td>
+
+
+                                        <td class="product-subtotal"><span class="amount">Rs{{cart.total}}</span></td>
+
+                                        <td class="plantmore-product-remove"><a href="/delete_cart/{{cart.slug}}"><i class="ion-close"></i></a></td>
                                     </tr>
-                                    <tr>
-                                        <td class="plantmore-product-thumbnail"><a href="#"><img src="/media/cart/2.jpg" alt=""></a></td>
-                                        <td class="plantmore-product-name"><a href="#">Vestibulum suscipit</a></td>
-                                        <td class="plantmore-product-price"><span class="amount">$60.50</span></td>
-                                        <td class="plantmore-product-quantity">
-                                            <input value="1" type="number">
-                                        </td>
-                                        <td class="product-subtotal"><span class="amount">$60.50</span></td>
-                                        <td class="plantmore-product-remove"><a href="#"><i class="ion-close"></i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="plantmore-product-thumbnail"><a href="#"><img src="/media/cart/3.jpg" alt=""></a></td>
-                                        <td class="plantmore-product-name"><a href="#">suscip dictum magna</a></td>
-                                        <td class="plantmore-product-price"><span class="amount">$40.50</span></td>
-                                        <td class="plantmore-product-quantity">
-                                            <input value="1" type="number">
-                                        </td>
-                                        <td class="product-subtotal"><span class="amount">$40.50</span></td>
-                                        <td class="plantmore-product-remove"><a href="#"><i class="ion-close"></i></a></td>
-                                    </tr>
+                                {% endfor %}
+
                                 </tbody>
                             </table>
                         </div>
