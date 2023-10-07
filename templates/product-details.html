@@ -229,7 +229,7 @@
                         <!-- Start Single Content -->
 
                         <div class="product_tab_content tab-pane" id="reviews" role="tabpanel">
-                            {% for review in product_review %}
+                            {% for review in product_reviews %}
                             <div class="review_address_inner">
                                 <!-- Start Single Review -->
 
@@ -282,6 +282,7 @@
                                 </div>
                             </div>
                             <!-- End RAting Area -->
+
                             <div class="comments-area comments-reply-area">
                                 <div class="row">
                                     <div class="col-lg-12">
@@ -300,6 +301,12 @@
                                     </div>
                                 </div>
                             </form>
+                            {% else %}
+
+                            <button class="comment-custom-button">
+                            <a href="{% url 'login' %}">Log in to Review</a>
+                            </button>
+
                             {% endif %}
                         </div>
 

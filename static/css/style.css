@@ -2673,6 +2673,10 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .comment-form-submit .comment-submit:hover {
   background: #000000;
 }
+.comment.custom-button {
+    padding-top: 40px; /* Adjust the value as needed for top padding */
+    padding-bottom: 40px; /* Adjust the value as needed for bottom padding */
+  }
 
 /*-- 
    14. sidebar Css
