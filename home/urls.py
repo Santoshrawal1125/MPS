@@ -22,4 +22,5 @@ urlpatterns = [
     path('add_to_wishlist/<slug>', add_to_wishlist, name='add_to_wishlist'),
     path('delete_wishlist/<slug>', delete_wishlist, name='delete_wishlist'),
     path('product_review/<slug>', product_review, name='product_review'),
+    path('blog_review/<int:id>', blog_review, name='blog_review'),
 ]

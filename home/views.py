@@ -45,6 +45,7 @@ class BlogView(Base):
     def get(self, request):
         self.views['blogs'] = Blog.objects.all
         self.views['count_cart'] = Cart.objects.filter(username=request.user.username, checkout=False).count()
+
         return render(request, 'blog.html', self.views)
 
 
@@ -52,6 +53,7 @@ class BlogDetails(Base):
 
     def get(self, request, id):
         self.views['blogs'] = Blog.objects.filter(id=id)
+        self.views['blog_reviews'] = BlogReview.objects.filter(id=id)
         self.views['count_cart'] = Cart.objects.filter(username=request.user.username, checkout=False).count()
         return render(request, 'blog-details.html', self.views)
 
@@ -301,3 +303,21 @@ def product_review(request, slug):
         return redirect(f'/product/{slug}')
 
     return redirect(f'/product/{slug}')
+
+
+def blog_review(request, id):
+    if Blog.objects.filter(id=id):
+
+        if request.method == 'POST':
+            username = request.user.username
+            comment = request.POST['comment']
+
+            BlogReview.objects.create(
+                username=username,
+                comment=comment,
+                id=id,
+            ).save()
+    else:
+        return redirect(f'/blog-details/{id}')
+
+    return redirect(f'/blog-details/{id}')

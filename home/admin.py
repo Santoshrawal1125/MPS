@@ -12,4 +12,4 @@ admin.site.register(Blog)
 admin.site.register(Cart)
 admin.site.register(WishList)
 admin.site.register(ProductReview)
-
+admin.site.register(BlogReview)

@@ -116,3 +116,13 @@ class ProductReview(models.Model):
 
     def __str__(self):
         return self.username
+
+
+class BlogReview(models.Model):
+    username = models.CharField(max_length=200)
+    comment = models.TextField()
+    id = models.CharField(max_length=500, primary_key=True)
+    date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.username

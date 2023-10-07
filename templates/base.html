@@ -132,30 +132,8 @@
                                 <a href="{% url 'cart' %}"><i class="icon-handbag"></i> <span id="cart-total">{{count_cart}}</span></a>
 
                                 <ul class="mini-cart">
-                                    <li class="cart-item">
-                                        <div class="cart-image">
-                                            <a href="single-product.html"><img alt="" src="media/product/1.jpg"></a>
-                                        </div>
-                                        <div class="cart-title">
-                                            <a href="single-product.html"><h4>Product Name 01</h4></a>
-                                            <span class="quantity">1 ×</span>
-                                            <div class="price-box"><span class="new-price">$130.00</span></div>
-                                            <a class="remove_from_cart" href="#"><i class="icon-trash icons"></i></a>
-                                        </div>
-                                    </li>
-                                    <li class="cart-item">
-                                        <div class="cart-image">
-                                            <a href="single-product.html"><img alt="" src="media/product/3.jpg"></a>
-                                        </div>
-                                        <div class="cart-title">
-                                            <a href="single-product.html"><h4>Product Name 03</h4></a>
-                                            <span class="quantity">1 ×</span>
-                                            <div class="price-box"><span class="new-price">$130.00</span></div>
-                                            <a class="remove_from_cart" href="#"><i class="icon-trash icons"></i></a>
-                                        </div>
-                                    </li>
                                     <li class="subtotal-titles">
-                                        <div class="subtotal-titles"><h3>Sub-Total :</h3><span>$ 230.99</span></div>
+                                        <div class="subtotal-titles"><h3>Total :</h3><span>{{all_total}}</span></div>
                                     </li>
                                     <li class="mini-cart-btns">
                                         <div class="cart-btns">

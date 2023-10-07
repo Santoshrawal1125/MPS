@@ -41,100 +41,51 @@
                                 <blockquote class="blockquote-inner">
                                     <p> {{blog.quote}}</p>
                                 </blockquote>
-                        {% endfor %}
+
                                 <div class="post-commet">
-                                    <a class="blog-comment" href="#">0 COMMENT</a>
-                                    <ul class="social-icons">
-                                        <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                        <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                        <li><a href="#"><i class="ion-social-dribbble"></i></a></li>
-                                        <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-                                    </ul>
+                                    <a class="blog-comment" href="#">COMMENTS</a>
                                 </div>
                             </div>
                             <div class="review_address_inner">
                                     <!-- Start Single Review -->
                                     <div class="pro_review">
-                                        <div class="review_thumb">
-                                            <img alt="review images" src="/media/review/1.jpg">
-                                        </div>
+                                        {% for review in blog_reviews %}
                                         <div class="review_details">
                                             <div class="review_info">
-                                                <h4><a href="#">Gerald Barnes</a></h4>
-                                                <ul class="product-rating d-flex">
-                                                    <li><span class="icon-star"></span></li>
-                                                    <li><span class="icon-star"></span></li>
-                                                    <li><span class="icon-star"></span></li>
-                                                    <li><span class="icon-star"></span></li>
-                                                    <li><span class="icon-star"></span></li>
-                                                </ul>
-                                                <div class="rating_send">
-                                                    <a href="#"><i class="ion-reply"></i></a>
-                                                </div>
+                                                <h4><a href="#">{{review.username}}</a></h4>
                                             </div>
                                             <div class="review_date">
-                                                <span>27 Jun, 2018 at 3:30pm</span>
+                                                <span>{{review.date}}</span>
                                             </div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at estei to bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+                                            <p>{{review.comment}}</p>
                                         </div>
-                                    </div>
-                                    <!-- End Single Review -->
-                                    <!-- Start Single Review -->
-                                    <div class="pro_review ans">
-                                        <div class="review_thumb">
-                                            <img alt="review images" src="/media/review/2.jpg">
-                                        </div>
-                                        <div class="review_details">
-                                            <div class="review_info">
-                                                <h4><a href="#">Gerald Barnes</a></h4>
-                                                <ul class="product-rating d-flex">
-                                                    <li><span class="icon-star"></span></li>
-                                                    <li><span class="icon-star"></span></li>
-                                                    <li><span class="icon-star"></span></li>
-                                                    <li><span class="icon-star"></span></li>
-                                                    <li><span class="icon-star"></span></li>
-                                                </ul>
-                                                <div class="rating_send">
-                                                    <a href="#"><i class="ion-reply"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="review_date">
-                                                <span>27 Jun, 2018 at 4:32pm</span>
-                                            </div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at estei to bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
-                                        </div>
+                                        {% endfor %}
                                     </div>
                                     <!-- End Single Review -->
                                 </div>
+
                             <div class="comments-area comments-reply-area">
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <h3 class="comment-reply-title">Leave a Reply</h3>
-                                        <form action="#" class="comment-form-area" method="POST">
+
+                                        {% if user.is_authenticated %}
+                                        <form action="/blog_review/{{blog.id}}" class="comment-form-area" method="POST">
                                             {% csrf_token %}
-                                            <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p>
+
                                             <p class="comment-form-comment">
                                                 <label>Comment</label> 
                                                 <textarea class="comment-notes" required="required" name="comment"></textarea>
                                             </p>
-                                            <div class="comment-input">
-                                                <p class="comment-form-author">
-                                                    <label>Name <span class="required">*</span></label> 
-                                                    <input type="text" required="required" name="name">
-                                                </p>
-                                                <p class="comment-form-email">
-                                                    <label>Email <span class="required">*</span></label> 
-                                                    <input type="text" required="required" name="email">
-                                                </p>
-                                                <p class="comment-form-url">
-                                                    <label>Website</label>
-                                                    <input type="text" name="url">
-                                                </p>
-                                            </div>
                                             <div class="comment-form-submit">
-                                                <input type="submit" value="Post Comment" class="comment-submit">
+                                                <input type="submit"  value="Post Comment" class="comment-submit">
                                             </div>
                                         </form>
+                                        {% else %}
+                                        <button class="comment-custom-button">
+                                         <a href="{% url 'login' %}">Log in to comment</a>
+                                        </button>
+
+                            {% endif %}
                                     </div>
                                 </div>
                             </div>
@@ -144,6 +95,7 @@
                 </div>
             </div>
         </div>
+        {% endfor %}
     </div>
     <!-- main-content-wrap end -->
     
