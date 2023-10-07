@@ -227,109 +227,92 @@
 
                         <!-- End Single Content -->
                         <!-- Start Single Content -->
+
                         <div class="product_tab_content tab-pane" id="reviews" role="tabpanel">
+                            {% for review in product_review %}
                             <div class="review_address_inner">
                                 <!-- Start Single Review -->
+
                                 <div class="pro_review">
-                                    <div class="review_thumb">
-                                        <img alt="review images" src="/media/review/1.jpg">
-                                    </div>
+
                                     <div class="review_details">
                                         <div class="review_info">
-                                            <h4><a href="#">Gerald Barnes</a></h4>
+                                            <h4><a href="#">{{review.username}}</a></h4>
                                             <ul class="product-rating d-flex">
+
+                                                {% for i in 1|ljust:review.star %}
                                                 <li><span class="icon-star"></span></li>
-                                                <li><span class="icon-star"></span></li>
-                                                <li><span class="icon-star"></span></li>
-                                                <li><span class="icon-star"></span></li>
-                                                <li><span class="icon-star"></span></li>
+                                                {% endfor %}
+
                                             </ul>
                                             <div class="rating_send">
                                                 <a href="#"><i class="ion-reply"></i></a>
                                             </div>
                                         </div>
                                         <div class="review_date">
-                                            <span>27 Jun, 2018 at 3:30pm</span>
+                                            <span>{{review.date}}</span>
                                         </div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at estei to bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+                                        <p>{{review.comment}}</p>
                                     </div>
+
                                 </div>
-                                <!-- End Single Review -->
-                                <!-- Start Single Review -->
-                                <div class="pro_review ans">
-                                    <div class="review_thumb">
-                                        <img alt="review images" src="/media/review/2.jpg">
-                                    </div>
-                                    <div class="review_details">
-                                        <div class="review_info">
-                                            <h4><a href="#">Gerald Barnes</a></h4>
-                                            <ul class="product-rating d-flex">
-                                                <li><span class="icon-star"></span></li>
-                                                <li><span class="icon-star"></span></li>
-                                                <li><span class="icon-star"></span></li>
-                                                <li><span class="icon-star"></span></li>
-                                                <li><span class="icon-star"></span></li>
-                                            </ul>
-                                            <div class="rating_send">
-                                                <a href="#"><i class="ion-reply"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="review_date">
-                                            <span>27 Jun, 2018 at 4:32pm</span>
-                                        </div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at estei to bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
-                                    </div>
-                                </div>
+
                                 <!-- End Single Review -->
                             </div>
-                            <!-- Start RAting Area -->
+                            {% endfor %}
+
+
+                              {% if user.is_authenticated %}
+                            <form action='/product_review/{{product.slug}}' method='POST'>
+                                {% csrf_token %}
+
                             <div class="rating_wrap">
                                 <h2 class="rating-title">Write  A review</h2>
                                 <h4 class="rating-title-2">Your Rating</h4>
                                 <div class="rating_list">
-                                    <ul class="product-rating d-flex">
-                                        <li><span class="icon-star"></span></li>
-                                        <li><span class="icon-star"></span></li>
-                                        <li><span class="icon-star"></span></li>
-                                        <li><span class="icon-star"></span></li>
-                                        <li><span class="icon-star"></span></li>
-                                    </ul>
+                                             <label for="stars">Choose a Rating:</label>
+
+                                            <select name="star" id="stars">
+                                              <option value="5">5</option>
+                                              <option value="4">4</option>
+                                              <option value="3">3</option>
+                                              <option value="2">2</option>
+                                                <option value="1">1</option>
+                                            </select>
                                 </div>
                             </div>
                             <!-- End RAting Area -->
                             <div class="comments-area comments-reply-area">
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <form action="#" class="comment-form-area">
+
                                             <div class="comment-input">
-                                                <p class="comment-form-author">
-                                                    <label>Name <span class="required">*</span></label> 
-                                                    <input type="text" required="required" name="Name">
-                                                </p>
-                                                <p class="comment-form-email">
-                                                    <label>Email <span class="required">*</span></label> 
-                                                    <input type="text" required="required" name="email">
-                                                </p>
+
                                             </div>
                                             <p class="comment-form-comment">
                                                 <label>Comment</label> 
-                                                <textarea class="comment-notes" required="required"></textarea>
+                                                <textarea class="comment-notes" name="comment" required="required"></textarea>
                                             </p>
                                             <div class="comment-form-submit">
-                                                <input type="submit" value="Post Comment" class="comment-submit">
+                                                <input type="submit"  value="Post Comment" class="comment-submit">
                                             </div>
-                                        </form>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>                             
+                            </form>
+                            {% endif %}
                         </div>
-                        <!-- End Single Content -->
+
                     </div>
+
                 </div>
-                {% endfor %}
+
             </div>
+                        <!-- End Single Content -->
         </div>
     </div>
+                {% endfor %}
+
     <!-- main-content-wrap end -->
     
 {% endblock %}

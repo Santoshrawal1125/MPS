@@ -9,7 +9,7 @@ urlpatterns = [
     path('blog-details/<int:id>', BlogDetails.as_view(), name='blog-details'),
     path('contact-us/', ContactView.as_view(), name='contact'),
     path('signup/', signup, name='signup'),
-    path('checkout/', Checkout.as_view(), name='checkout'),
+    path('checkout/', CheckoutView.as_view(), name='checkout'),
     path('category/<slug>', CategoryView.as_view(), name='category'),
     path('product/<slug>', ProductDetails.as_view(), name='product'),
     path('search', SearchView.as_view(), name='search'),
@@ -21,4 +21,5 @@ urlpatterns = [
     path('wishlist/', WishListView.as_view(), name='wishlist'),
     path('add_to_wishlist/<slug>', add_to_wishlist, name='add_to_wishlist'),
     path('delete_wishlist/<slug>', delete_wishlist, name='delete_wishlist'),
+    path('product_review/<slug>', product_review, name='product_review'),
 ]

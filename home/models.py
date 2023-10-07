@@ -38,7 +38,6 @@ class Product(models.Model):
     stock = models.CharField(choices=STOCK, max_length=50)
     labels = models.CharField(choices=LABELS, max_length=50, blank=True)
 
-
     def __str__(self):
         return self.name
 
@@ -74,12 +73,11 @@ class Contact(models.Model):
 
 
 class Cart(models.Model):
-
     username = models.CharField(max_length=200)
     slug = models.CharField(max_length=300)
     quantity = models.IntegerField()
     total = models.IntegerField()
-    items = models.ForeignKey(Product,on_delete=models.CASCADE)
+    items = models.ForeignKey(Product, on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=True)
     checkout = models.BooleanField(default=False)
 
@@ -100,13 +98,21 @@ class Blog(models.Model):
 
 
 class WishList(models.Model):
-
     username = models.CharField(max_length=200)
     slug = models.CharField(max_length=300)
-    items = models.ForeignKey(Product,on_delete=models.CASCADE)
+    items = models.ForeignKey(Product, on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.username
 
 
+class ProductReview(models.Model):
+    username = models.CharField(max_length=200)
+    comment = models.TextField()
+    slug = models.CharField(max_length=500)
+    star = models.IntegerField()
+    date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.username

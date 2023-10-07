@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Home 2 Fusta - Furniture eCommerce Bootstrap 4 HTML5 Template</title>
+    <title>Milan Photo Studio</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
@@ -129,7 +129,8 @@
                             </div>
 
                             <div class="shopping-cart-wrap">
-                                <a href="{% url 'cart' %}"><i class="icon-handbag"></i> <span id="cart-total">2</span></a>
+                                <a href="{% url 'cart' %}"><i class="icon-handbag"></i> <span id="cart-total">{{count_cart}}</span></a>
+
                                 <ul class="mini-cart">
                                     <li class="cart-item">
                                         <div class="cart-image">
