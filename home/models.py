@@ -126,3 +126,14 @@ class BlogReview(models.Model):
 
     def __str__(self):
         return self.username
+
+
+class Checkout(models.Model):
+    Firstname = models.CharField(max_length=200)
+    Lastname = models.CharField(max_length=200)
+    address = models.CharField(max_length=400)
+    phone = models.CharField(max_length=100)
+    note = models.TextField()
+
+    def __str__(self):
+        return self.Firstname

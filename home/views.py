@@ -64,6 +64,26 @@ class CheckoutView(Base):
         self.views['count_cart'] = Cart.objects.filter(username=request.user.username, checkout=False).count()
         return render(request, 'checkout.html', self.views)
 
+    def post(self, request):
+        if request.method == 'POST':
+            Firstname = request.POST['Firstname']
+            Lastname = request.POST['Lastname']
+            address = request.POST['address']
+            phone = request.POST['phone']
+            note = request.POST['note']
+            data = Checkout.objects.create(
+
+                Firstname=Firstname,
+                Lastname=Lastname,
+                address=address,
+                phone=phone,
+                note=note,
+
+            )
+            data.save()
+
+        return render(request, 'checkout.html', self.views)
+
 
 class ContactView(Base):
 
